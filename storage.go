@@ -15,12 +15,12 @@ import (
 
 // StorageDevice information.
 type StorageDevice struct {
-	Name   string `json:"name,omitempty" hcl:"name,optional"`
-	Driver string `json:"driver,omitempty" hcl:"driver,optional"`
-	Vendor string `json:"vendor,omitempty" hcl:"vendor,optional"`
-	Model  string `json:"model,omitempty" hcl:"model,optional"`
-	Serial string `json:"serial,omitempty" hcl:"serial,optional"`
-	Size   uint   `json:"size,omitempty" hcl:"size,optional"` // device size in GB
+	Name   string `json:"name,omitempty" cty:"name" hcl:"name,optional"`
+	Driver string `json:"driver,omitempty" cty:"driver" hcl:"driver,optional"`
+	Vendor string `json:"vendor,omitempty" cty:"vendor" hcl:"vendor,optional"`
+	Model  string `json:"model,omitempty" cty:"model" hcl:"model,optional"`
+	Serial string `json:"serial,omitempty" cty:"serial" hcl:"serial,optional"`
+	Size   uint   `json:"size,omitempty" cty:"size" hcl:"size,optional"` // device size in GB
 }
 
 func getSerial(name, fullpath string) (serial string) {

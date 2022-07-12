@@ -13,9 +13,9 @@ import (
 
 // Memory information.
 type Memory struct {
-	Type  string `json:"type,omitempty" hcl:"type,optional"`
-	Speed uint   `json:"speed,omitempty" hcl:"speed,optional"` // RAM data rate in MT/s
-	Size  uint   `json:"size,omitempty" hcl:"size,optional"`   // RAM size in MB
+	Type  string `json:"type,omitempty" cty:"type" hcl:"type,optional"`
+	Speed uint   `json:"speed,omitempty" cty:"speed" hcl:"speed,optional"` // RAM data rate in MT/s
+	Size  uint   `json:"size,omitempty" cty:"size" hcl:"size,optional"`    // RAM size in MB
 }
 
 func word(data []byte, index int) uint16 {

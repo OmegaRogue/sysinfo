@@ -6,10 +6,10 @@ package sysinfo
 
 // Product information.
 type Product struct {
-	Name    string `json:"name,omitempty" hcl:"name,optional"`
-	Vendor  string `json:"vendor,omitempty" hcl:"vendor,optional"`
-	Version string `json:"version,omitempty" hcl:"version,optional"`
-	Serial  string `json:"serial,omitempty" hcl:"serial,optional"`
+	Name    string `json:"name,omitempty" cty:"name" hcl:"name,optional"`
+	Vendor  string `json:"vendor,omitempty" cty:"vendor" hcl:"vendor,optional"`
+	Version string `json:"version,omitempty" cty:"version" hcl:"version,optional"`
+	Serial  string `json:"serial,omitempty" cty:"serial" hcl:"serial,optional"`
 }
 
 func (si *SysInfo) getProductInfo() {
