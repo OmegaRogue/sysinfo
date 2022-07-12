@@ -16,13 +16,13 @@ import (
 
 // CPU information.
 type CPU struct {
-	Vendor  string `json:"vendor,omitempty"`
-	Model   string `json:"model,omitempty"`
-	Speed   uint   `json:"speed,omitempty"`   // CPU clock rate in MHz
-	Cache   uint   `json:"cache,omitempty"`   // CPU cache size in KB
-	Cpus    uint   `json:"cpus,omitempty"`    // number of physical CPUs
-	Cores   uint   `json:"cores,omitempty"`   // number of physical CPU cores
-	Threads uint   `json:"threads,omitempty"` // number of logical (HT) CPU cores
+	Vendor  string `json:"vendor,omitempty" hcl:"vendor,optional"`
+	Model   string `json:"model,omitempty" hcl:"model,optional"`
+	Speed   uint   `json:"speed,omitempty" hcl:"speed,optional"`     // CPU clock rate in MHz
+	Cache   uint   `json:"cache,omitempty" hcl:"cache,optional"`     // CPU cache size in KB
+	Cpus    uint   `json:"cpus,omitempty" hcl:"cpus,optional"`       // number of physical CPUs
+	Cores   uint   `json:"cores,omitempty" hcl:"cores,optional"`     // number of physical CPU cores
+	Threads uint   `json:"threads,omitempty" hcl:"threads,optional"` // number of logical (HT) CPU cores
 }
 
 var (

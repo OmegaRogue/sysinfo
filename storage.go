@@ -15,12 +15,12 @@ import (
 
 // StorageDevice information.
 type StorageDevice struct {
-	Name   string `json:"name,omitempty"`
-	Driver string `json:"driver,omitempty"`
-	Vendor string `json:"vendor,omitempty"`
-	Model  string `json:"model,omitempty"`
-	Serial string `json:"serial,omitempty"`
-	Size   uint   `json:"size,omitempty"` // device size in GB
+	Name   string `json:"name,omitempty" hcl:"name,optional"`
+	Driver string `json:"driver,omitempty" hcl:"driver,optional"`
+	Vendor string `json:"vendor,omitempty" hcl:"vendor,optional"`
+	Model  string `json:"model,omitempty" hcl:"model,optional"`
+	Serial string `json:"serial,omitempty" hcl:"serial,optional"`
+	Size   uint   `json:"size,omitempty" hcl:"size,optional"` // device size in GB
 }
 
 func getSerial(name, fullpath string) (serial string) {
@@ -79,7 +79,11 @@ func (si *SysInfo) getStorageInfo() {
 
 		// We could filter all removable devices here, but some systems boot from USB flash disks, and then we
 		// would filter them, too. So, let's filter only floppies and CD/DVD devices, and see how it pans out.
-		if strings.HasPrefix(dev, "../devices/platform/floppy") || slurpFile(path.Join(fullpath, "device", "type")) == "5" {
+		if strings.HasPrefix(dev, "../devices/platform/floppy") || slurpFile(
+			path.Join(
+				fullpath, "device", "type",
+			),
+		) == "5" {
 			continue
 		}
 

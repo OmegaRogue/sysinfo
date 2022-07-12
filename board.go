@@ -6,11 +6,11 @@ package sysinfo
 
 // Board information.
 type Board struct {
-	Name     string `json:"name,omitempty"`
-	Vendor   string `json:"vendor,omitempty"`
-	Version  string `json:"version,omitempty"`
-	Serial   string `json:"serial,omitempty"`
-	AssetTag string `json:"assettag,omitempty"`
+	Name     string `json:"name,omitempty" hcl:"name,optional"`
+	Vendor   string `json:"vendor,omitempty" hcl:"vendor,optional"`
+	Version  string `json:"version,omitempty" hcl:"version,optional"`
+	Serial   string `json:"serial,omitempty" hcl:"serial,optional"`
+	AssetTag string `json:"assettag,omitempty" hcl:"assettag,optional"`
 }
 
 func (si *SysInfo) getBoardInfo() {

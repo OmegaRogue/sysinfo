@@ -13,11 +13,11 @@ import (
 
 // OS information.
 type OS struct {
-	Name         string `json:"name,omitempty"`
-	Vendor       string `json:"vendor,omitempty"`
-	Version      string `json:"version,omitempty"`
-	Release      string `json:"release,omitempty"`
-	Architecture string `json:"architecture,omitempty"`
+	Name         string `json:"name,omitempty" hcl:"name,optional"`
+	Vendor       string `json:"vendor,omitempty" hcl:"vendor,optional"`
+	Version      string `json:"version,omitempty" hcl:"version,optional"`
+	Release      string `json:"release,omitempty" hcl:"release,optional"`
+	Architecture string `json:"architecture,omitempty" hcl:"architecture,optional"`
 }
 
 var (

@@ -2,7 +2,8 @@
 //
 // Use of this source code is governed by an MIT-style license that can be found in the LICENSE file.
 
-//+build linux
+//go:build linux
+// +build linux
 
 package sysinfo
 
@@ -14,9 +15,9 @@ import (
 
 // Kernel information.
 type Kernel struct {
-	Release      string `json:"release,omitempty"`
-	Version      string `json:"version,omitempty"`
-	Architecture string `json:"architecture,omitempty"`
+	Release      string `json:"release,omitempty" hcl:"release,optional"`
+	Version      string `json:"version,omitempty" hcl:"version,optional"`
+	Architecture string `json:"architecture,omitempty" hcl:"architecture,optional"`
 }
 
 func (si *SysInfo) getKernelInfo() {

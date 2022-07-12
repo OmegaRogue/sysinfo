@@ -15,10 +15,10 @@ import (
 
 // Node information.
 type Node struct {
-	Hostname   string `json:"hostname,omitempty"`
-	MachineID  string `json:"machineid,omitempty"`
-	Hypervisor string `json:"hypervisor,omitempty"`
-	Timezone   string `json:"timezone,omitempty"`
+	Hostname   string `json:"hostname,omitempty" hcl:"hostname,optional"`
+	MachineID  string `json:"machineid,omitempty" hcl:"machineid,optional"`
+	Hypervisor string `json:"hypervisor,omitempty" hcl:"hypervisor,optional"`
+	Timezone   string `json:"timezone,omitempty" hcl:"timezone,optional"`
 }
 
 func (si *SysInfo) getHostname() {

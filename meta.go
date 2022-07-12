@@ -8,8 +8,8 @@ import "time"
 
 // Meta information.
 type Meta struct {
-	Version   string    `json:"version"`
-	Timestamp time.Time `json:"timestamp"`
+	Version   string    `json:"version" hcl:"version,optional"`
+	Timestamp time.Time `json:"timestamp" hcl:"timestamp,optional"`
 }
 
 func (si *SysInfo) getMetaInfo() {

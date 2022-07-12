@@ -7,18 +7,18 @@ package sysinfo
 
 // SysInfo struct encapsulates all other information structs.
 type SysInfo struct {
-	Meta    Meta            `json:"sysinfo"`
-	Node    Node            `json:"node"`
-	OS      OS              `json:"os"`
-	Kernel  Kernel          `json:"kernel"`
-	Product Product         `json:"product"`
-	Board   Board           `json:"board"`
-	Chassis Chassis         `json:"chassis"`
-	BIOS    BIOS            `json:"bios"`
-	CPU     CPU             `json:"cpu"`
-	Memory  Memory          `json:"memory"`
-	Storage []StorageDevice `json:"storage,omitempty"`
-	Network []NetworkDevice `json:"network,omitempty"`
+	Meta    Meta            `json:"sysinfo" hcl:"sysinfo,block"`
+	Node    Node            `json:"node" hcl:"node,block"`
+	OS      OS              `json:"os" hcl:"os,block"`
+	Kernel  Kernel          `json:"kernel" hcl:"kernel,block"`
+	Product Product         `json:"product" hcl:"product,block"`
+	Board   Board           `json:"board" hcl:"board,block"`
+	Chassis Chassis         `json:"chassis" hcl:"chassis,block"`
+	BIOS    BIOS            `json:"bios" hcl:"bios,block"`
+	CPU     CPU             `json:"cpu" hcl:"cpu,block"`
+	Memory  Memory          `json:"memory" hcl:"memory,block"`
+	Storage []StorageDevice `json:"storage,omitempty" hcl:"storage,block"`
+	Network []NetworkDevice `json:"network,omitempty" hcl:"network,block"`
 }
 
 // GetSysInfo gathers all available system information.

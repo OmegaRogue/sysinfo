@@ -15,11 +15,11 @@ import (
 
 // NetworkDevice information.
 type NetworkDevice struct {
-	Name       string `json:"name,omitempty"`
-	Driver     string `json:"driver,omitempty"`
-	MACAddress string `json:"macaddress,omitempty"`
-	Port       string `json:"port,omitempty"`
-	Speed      uint   `json:"speed,omitempty"` // device max supported speed in Mbps
+	Name       string `json:"name,omitempty" hcl:"name,optional"`
+	Driver     string `json:"driver,omitempty" hcl:"driver,optional"`
+	MACAddress string `json:"macaddress,omitempty" hcl:"macaddress,optional"`
+	Port       string `json:"port,omitempty" hcl:"port,optional"`
+	Speed      uint   `json:"speed,omitempty" hcl:"speed,optional"` // device max supported speed in Mbps
 }
 
 func getPortType(supp uint32) (port string) {

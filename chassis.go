@@ -8,11 +8,11 @@ import "strconv"
 
 // Chassis information.
 type Chassis struct {
-	Type     uint   `json:"type,omitempty"`
-	Vendor   string `json:"vendor,omitempty"`
-	Version  string `json:"version,omitempty"`
-	Serial   string `json:"serial,omitempty"`
-	AssetTag string `json:"assettag,omitempty"`
+	Type     uint   `json:"type,omitempty" hcl:"type,optional"`
+	Vendor   string `json:"vendor,omitempty" hcl:"vendor,optional"`
+	Version  string `json:"version,omitempty" hcl:"version,optional"`
+	Serial   string `json:"serial,omitempty" hcl:"serial,optional"`
+	AssetTag string `json:"assettag,omitempty" hcl:"assettag,optional"`
 }
 
 func (si *SysInfo) getChassisInfo() {

@@ -6,9 +6,9 @@ package sysinfo
 
 // BIOS information.
 type BIOS struct {
-	Vendor  string `json:"vendor,omitempty"`
-	Version string `json:"version,omitempty"`
-	Date    string `json:"date,omitempty"`
+	Vendor  string `json:"vendor,omitempty" hcl:"vendor,optional"`
+	Version string `json:"version,omitempty" hcl:"version,optional"`
+	Date    string `json:"date,omitempty" hcl:"date,optional"`
 }
 
 func (si *SysInfo) getBIOSInfo() {
